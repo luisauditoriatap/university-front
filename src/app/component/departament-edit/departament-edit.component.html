@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>Edit Departament</h2>
+
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+
+    <form #departamentform="ngform" *ngIf="departament">
+
+        <div class="forms-row">
+            <div class="col-md-4">
+                <label>DepartmentID:</label>
+                <input type="text" id="departamentID" name="departamentID" placeholder="Ingrese código de departamento"
+                    class="form-control" #departamentID [(ngModel)]="departament.DepartamentID" readonly />
+            </div>
+
+            <div class="col-md-4">
+                <label>Name:</label>
+                <input type="text" id="name" name="name" placeholder="Ingrese su nombre" class="form-control" #name
+                    [(ngModel)]="departament.Name" />
+            </div>
+
+            <div class="col-md-4">
+                <label>Budget:</label>
+                <input type="text" id="budget" name="budget" placeholder="Ingrese el dato solicitado"
+                    class="form-control" #budget [(ngModel)]="departament.Budget" />
+            </div>
+
+            <div class="col-md-4">
+                <label>StartDate:</label>
+                <input type="text" id="startdate" name="startdate" placeholder="Ingrese la fecha" class="form-control"
+                    #startdate [(ngModel)]="departament.StartDate" />
+            </div>
+        </div>
+
+        <br>
+        <div class="btn-group" role="group">
+            <button class="btn btn-outline-primary btn-sm" (click)="edit()">Edit</button>
+            <a class="btn btn-outline-primary btn-sm" [routerLink]="[ '/departament-list']">back</a>
+        </div>
+
+
+    </form>
+
+</div>
